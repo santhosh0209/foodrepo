@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content%}
+
+<div class="wrapper">
+    <div class="title">
+        <h1 style="text-transform: capitalize;">contact us form</h1>
+    </div>
+    <div>
+        <div class="row contact-form">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="contact-form col-sm-8 col-sm-offset-2">
+
+                        <form method="POST" action="{% url 'food:mail' %}" data-form-title="CONTACT US">
+
+                            {% csrf_token %}
+
+                            <div class="input-fields">
+                                <input type="text" class="input" name="from" required="" placeholder="Enter your club name" data-form-field="Name">
+
+                                <input type="text" class="input" name="name" required="" value="To:  {{msg.name}}" data-form-field="Name">
+                                <input type="hidden" class="input" name="email" required="" value="{{msg.email}}" data-form-field="Email">
+                                <input type="text" class="input" name="food" required="" placeholder="What are the foods available" data-form-field="Name">
+                                <input type="number" class="input" name="quantity" required="" placeholder="How many people it serves" data-form-field="Name">
+                                <div class="msg">
+                                    <textarea class="input" name="message" placeholder="Greetings" rows="7" data-form-field="Message"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn ">CONTACT US</button>
+                                </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}

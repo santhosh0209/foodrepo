@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content%}
+<!-- <tbody>
+    {% for party in ab %}
+    <tr>
+        <td><a href="{{party.get_absolute_url}}">{{party.name}}</a></td>
+        <td>{{party.mobile_no}} </td>
+    </tr>
+    {% endfor %}
+</tbody> -->
+
+
+
+<div class="body" id="main">
+
+    <h1 class="heading">PartyHall's</h1>
+
+    <ul>
+        {% for party in ab %}
+        <li><a href="{{party.get_absolute_url}}">{{party.name}}</a></li>
+        {% endfor %}
+
+
+    </ul>
+
+
+</div>
+
+
+{% endblock %}

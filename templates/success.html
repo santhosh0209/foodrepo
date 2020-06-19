@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content%}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Thank You</h1>
+        <p class="lead">The Message has been sent sucessfully.</p>
+        <h3 class="btn btn-primary" style="padding: 10px 15px;
+        ">
+            <a style="text-decoration:none; color:#fff;outline: none;
+            border: none; " href="{% url 'food:partylist'%} ">Back</a>
+        </h3>
+    </div>
+</div> {% endblock %}

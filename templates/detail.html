@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="bdy">
+
+
+    <div class="accordion-container">
+        <h2 style="text-transform: capitalize;">Near by trust</h2>
+        {% for party in detail.nearby_trust.all %}
+
+        <div class="set">
+            <a style="text-transform: capitalize;" href=" # ">
+                {{party.name}}
+        <i class="fa fa-plus "></i>
+      </a>
+            <div class="content ">
+                <ul class="text ">
+
+                    <li style=" text-transform: capitalize;"> <b>Address:</b> {{party.address}}</li>
+                    <li><b>Mobile</b> {{party.mobile_no}}</li>
+                    <li><b>Email</b> {{party.email}}</li>
+                    <li><a style="text-decoration: none; text-transform: uppercase;" href="{{party.get_absolute_url}} ">send mail</a></li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
